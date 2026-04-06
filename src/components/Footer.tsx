@@ -1,5 +1,5 @@
 import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Youtube } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 export default function Footer() {
@@ -40,12 +40,12 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-6 border-b-2 border-amber-500 pb-2 inline-block">{t('footer.quick-links')}</h3>
             <ul className="space-y-3 text-sm text-gray-300">
-              <li><Link to="/pendaftaran" className="hover:text-amber-400 transition-colors">Penerimaan Mahasiswa Baru</Link></li>
-              <li><Link to="#" className="hover:text-amber-400 transition-colors">Sistem Informasi Akademik</Link></li>
-              <li><Link to="#" className="hover:text-amber-400 transition-colors">E-Learning / LMS</Link></li>
-              <li><Link to="#" className="hover:text-amber-400 transition-colors">Perpustakaan Digital</Link></li>
-              <li><Link to="#" className="hover:text-amber-400 transition-colors">Jurnal Ilmiah</Link></li>
-              <li><Link to="#" className="hover:text-amber-400 transition-colors">Tracer Study</Link></li>
+              <li><Link href="/pendaftaran" className="hover:text-amber-400 transition-colors">Penerimaan Mahasiswa Baru</Link></li>
+              <li><Link href="#" className="hover:text-amber-400 transition-colors">Sistem Informasi Akademik</Link></li>
+              <li><Link href="#" className="hover:text-amber-400 transition-colors">E-Learning / LMS</Link></li>
+              <li><Link href="#" className="hover:text-amber-400 transition-colors">Perpustakaan Digital</Link></li>
+              <li><Link href="#" className="hover:text-amber-400 transition-colors">Jurnal Ilmiah</Link></li>
+              <li><Link href="#" className="hover:text-amber-400 transition-colors">Tracer Study</Link></li>
             </ul>
           </div>
 
@@ -53,11 +53,11 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-6 border-b-2 border-amber-500 pb-2 inline-block">{t('footer.programs')}</h3>
             <ul className="space-y-3 text-sm text-gray-300">
-              <li><Link to="/prodi/pendidikan-geografi" className="hover:text-amber-400 transition-colors">Prodi Pendidikan Geografi</Link></li>
-              <li><Link to="/prodi/pendidikan-matematika" className="hover:text-amber-400 transition-colors">Prodi Pendidikan Matematika</Link></li>
-              <li><Link to="/prodi/pendidikan-olahraga" className="hover:text-amber-400 transition-colors">Prodi Pendidikan Olahraga</Link></li>
-              <li><Link to="/prodi/pgsd" className="hover:text-amber-400 transition-colors">Prodi Pendidikan Guru Sekolah Dasar</Link></li>
-              <li><Link to="/prodi/informatika" className="hover:text-amber-400 transition-colors">Prodi Informatika</Link></li>
+              <li><Link href="/prodi/pendidikan-geografi" className="hover:text-amber-400 transition-colors">Prodi Pendidikan Geografi</Link></li>
+              <li><Link href="/prodi/pendidikan-matematika" className="hover:text-amber-400 transition-colors">Prodi Pendidikan Matematika</Link></li>
+              <li><Link href="/prodi/pendidikan-olahraga" className="hover:text-amber-400 transition-colors">Prodi Pendidikan Olahraga</Link></li>
+              <li><Link href="/prodi/pgsd" className="hover:text-amber-400 transition-colors">Prodi Pendidikan Guru Sekolah Dasar</Link></li>
+              <li><Link href="/prodi/informatika" className="hover:text-amber-400 transition-colors">Prodi Informatika</Link></li>
             </ul>
           </div>
 
@@ -84,8 +84,8 @@ export default function Footer() {
         <div className="border-t border-blue-900 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
           <p>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <Link to="#" className="hover:text-white transition-colors">{t('footer.privacy')}</Link>
-            <Link to="#" className="hover:text-white transition-colors">{t('footer.terms')}</Link>
+            <Link href="#" className="hover:text-white transition-colors">{t('footer.privacy')}</Link>
+            <Link href="#" className="hover:text-white transition-colors">{t('footer.terms')}</Link>
           </div>
         </div>
       </div>

@@ -1,4 +1,6 @@
-import { useParams, Navigate, Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import Link from "next/link";
 import { motion } from "motion/react";
 import { BookOpen, Target, Award, ArrowRight, Users, Monitor, Map, Calculator, Activity } from "lucide-react";
 
@@ -91,11 +93,18 @@ const prodiData: Record<string, any> = {
 };
 
 export default function ProgramStudi() {
-  const { id } = useParams();
-  const prodi = prodiData[id as string];
+  const router = useRouter();
+  const id = Array.isArray(router.query.id) ? router.query.id[0] : router.query.id;
+  const prodi = typeof id === 'string' ? prodiData[id] : null;
 
-  if (!prodi) {
-    return <Navigate to="/" />;
+  useEffect(() => {
+    if (router.isReady && !prodi) {
+      router.replace('/');
+    }
+  }, [router, router.isReady, prodi]);
+
+  if (!router.isReady || !prodi) {
+    return null;
   }
 
   const Icon = prodi.icon;
@@ -164,7 +173,7 @@ export default function ProgramStudi() {
                 <p className="text-gray-300 mb-6">
                   Jadilah bagian dari <strong>{prodi.title}</strong> dan wujudkan masa depan gemilang Anda bersama ITPPN Buton.
                 </p>
-                <Link to="/pendaftaran" className="w-full bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold py-3 px-4 rounded-md transition-colors flex items-center justify-center">
+                <Link href="/pendaftaran" className="w-full bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold py-3 px-4 rounded-md transition-colors flex items-center justify-center">
                   Daftar Sekarang <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </div>

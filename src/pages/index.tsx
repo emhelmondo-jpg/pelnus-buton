@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { ArrowRight, BookOpen, Users, Trophy, GraduationCap, Calendar, ChevronRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 export default function Home() {
@@ -49,10 +49,10 @@ export default function Home() {
               {t('home.hero-subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <Link to="/pendaftaran" className="bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold py-3 px-8 rounded-md transition-all transform hover:scale-105 flex items-center">
+              <Link href="/pendaftaran" className="bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold py-3 px-8 rounded-md transition-all transform hover:scale-105 flex items-center">
                 {t('home.register-now')} <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
-              <Link to="#" className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-md transition-all">
+              <Link href="#" className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-md transition-all">
                 {t('home.explore-programs')}
               </Link>
             </div>
@@ -69,7 +69,7 @@ export default function Home() {
             </div>
             <h3 className="text-xl font-bold text-blue-950 mb-3">{t('home.featured-programs')}</h3>
             <p className="text-gray-600 mb-4">{t('home.featured-programs-desc')}</p>
-            <Link to="#" className="text-amber-500 font-semibold flex items-center hover:text-amber-600">
+            <Link href="#" className="text-amber-500 font-semibold flex items-center hover:text-amber-600">
               {t('home.learn-more')} <ChevronRight className="w-4 h-4 ml-1" />
             </Link>
           </div>
@@ -80,7 +80,7 @@ export default function Home() {
             </div>
             <h3 className="text-xl font-bold text-blue-950 mb-3">{t('home.professional-lecturers')}</h3>
             <p className="text-gray-600 mb-4">{t('home.professional-lecturers-desc')}</p>
-            <Link to="#" className="text-amber-500 font-semibold flex items-center hover:text-amber-600">
+            <Link href="#" className="text-amber-500 font-semibold flex items-center hover:text-amber-600">
               {t('home.learn-more')} <ChevronRight className="w-4 h-4 ml-1" />
             </Link>
           </div>
@@ -91,7 +91,7 @@ export default function Home() {
             </div>
             <h3 className="text-xl font-bold text-blue-950 mb-3">{t('home.modern-facilities')}</h3>
             <p className="text-gray-600 mb-4">{t('home.modern-facilities-desc')}</p>
-            <Link to="#" className="text-amber-500 font-semibold flex items-center hover:text-amber-600">
+            <Link href="#" className="text-amber-500 font-semibold flex items-center hover:text-amber-600">
               {t('home.learn-more')} <ChevronRight className="w-4 h-4 ml-1" />
             </Link>
           </div>
@@ -176,7 +176,7 @@ export default function Home() {
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-blue-950">Berita & Pengumuman Terbaru</h2>
             </div>
-            <Link to="#" className="hidden md:flex items-center text-blue-800 font-semibold hover:text-amber-500 transition-colors">
+            <Link href="#" className="hidden md:flex items-center text-blue-800 font-semibold hover:text-amber-500 transition-colors">
               Lihat Semua Berita <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
           </div>
@@ -206,12 +206,12 @@ export default function Home() {
                       {new Date(item.created_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}
                     </div>
                     <h3 className="text-xl font-bold text-blue-950 mb-3 line-clamp-2 group-hover:text-blue-700 transition-colors">
-                      <Link to="#">{item.title}</Link>
+                      <Link href="#">{item.title}</Link>
                     </h3>
                     <p className="text-gray-600 mb-4 line-clamp-3">
                       {item.excerpt}
                     </p>
-                    <Link to="#" className="text-blue-800 font-semibold flex items-center hover:text-amber-500 transition-colors">
+                    <Link href="#" className="text-blue-800 font-semibold flex items-center hover:text-amber-500 transition-colors">
                       Baca Selengkapnya <ChevronRight className="w-4 h-4 ml-1" />
                     </Link>
                   </div>
@@ -221,7 +221,7 @@ export default function Home() {
           )}
           
           <div className="mt-8 text-center md:hidden">
-            <Link to="#" className="inline-flex items-center text-blue-800 font-semibold hover:text-amber-500 transition-colors">
+            <Link href="#" className="inline-flex items-center text-blue-800 font-semibold hover:text-amber-500 transition-colors">
               Lihat Semua Berita <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
           </div>
@@ -240,10 +240,10 @@ export default function Home() {
             Wujudkan mimpimu bersama ITPPN Buton. Pendaftaran gelombang pertama telah dibuka.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link to="/pendaftaran" className="bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold py-3 px-8 rounded-md transition-all text-lg">
+            <Link href="/pendaftaran" className="bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold py-3 px-8 rounded-md transition-all text-lg">
               Daftar Online
             </Link>
-            <Link to="/pendaftaran" className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-md transition-all text-lg">
+            <Link href="/pendaftaran" className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-md transition-all text-lg">
               Informasi Pendaftaran
             </Link>
           </div>

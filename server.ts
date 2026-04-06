@@ -1,12 +1,12 @@
 import express from "express";
-import { createServer as createViteServer } from "vite";
+// import { createServer as createViteServer } from "vite";
 import cors from "cors";
 import { Pool } from "pg";
-import path from "path";
+import * as path from "path";
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = 3001; // Changed to 3001 to avoid conflict with Next.js on 3000
 
   app.use(cors());
   app.use(express.json());
@@ -62,7 +62,9 @@ async function startServer() {
   // Serve static files from public directory
   app.use(express.static(path.join(process.cwd(), 'public')));
 
-  // Vite middleware for development
+  // Note: Vite middleware removed since we're using Next.js now
+  // If you need Vite for development, uncomment the following:
+  /*
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
       server: { middlewareMode: true },
@@ -76,9 +78,11 @@ async function startServer() {
       res.sendFile(path.join(distPath, "index.html"));
     });
   }
+  */
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Express server running on http://localhost:${PORT}`);
+    console.log(`Note: Next.js is running on port 3000`);
   });
 }
 
