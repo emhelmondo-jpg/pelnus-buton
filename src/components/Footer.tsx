@@ -1,7 +1,9 @@
 import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="bg-blue-950 text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
@@ -36,7 +38,7 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-6 border-b-2 border-amber-500 pb-2 inline-block">Tautan Cepat</h3>
+            <h3 className="text-lg font-bold mb-6 border-b-2 border-amber-500 pb-2 inline-block">{t('footer.quick-links')}</h3>
             <ul className="space-y-3 text-sm text-gray-300">
               <li><Link to="/pendaftaran" className="hover:text-amber-400 transition-colors">Penerimaan Mahasiswa Baru</Link></li>
               <li><Link to="#" className="hover:text-amber-400 transition-colors">Sistem Informasi Akademik</Link></li>
@@ -49,7 +51,7 @@ export default function Footer() {
 
           {/* Column 3: Program Studi */}
           <div>
-            <h3 className="text-lg font-bold mb-6 border-b-2 border-amber-500 pb-2 inline-block">Program Studi</h3>
+            <h3 className="text-lg font-bold mb-6 border-b-2 border-amber-500 pb-2 inline-block">{t('footer.programs')}</h3>
             <ul className="space-y-3 text-sm text-gray-300">
               <li><Link to="/prodi/pendidikan-geografi" className="hover:text-amber-400 transition-colors">Prodi Pendidikan Geografi</Link></li>
               <li><Link to="/prodi/pendidikan-matematika" className="hover:text-amber-400 transition-colors">Prodi Pendidikan Matematika</Link></li>
@@ -61,7 +63,7 @@ export default function Footer() {
 
           {/* Column 4: Contact */}
           <div>
-            <h3 className="text-lg font-bold mb-6 border-b-2 border-amber-500 pb-2 inline-block">Hubungi Kami</h3>
+            <h3 className="text-lg font-bold mb-6 border-b-2 border-amber-500 pb-2 inline-block">{t('footer.contact')}</h3>
             <ul className="space-y-4 text-sm text-gray-300">
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 mr-3 text-amber-500 flex-shrink-0 mt-0.5" />
@@ -80,10 +82,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-blue-900 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Institut Teknologi dan Pendidikan Pelita Nusantara Buton. All rights reserved.</p>
+          <p>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <Link to="#" className="hover:text-white transition-colors">Kebijakan Privasi</Link>
-            <Link to="#" className="hover:text-white transition-colors">Syarat & Ketentuan</Link>
+            <Link to="#" className="hover:text-white transition-colors">{t('footer.privacy')}</Link>
+            <Link to="#" className="hover:text-white transition-colors">{t('footer.terms')}</Link>
           </div>
         </div>
       </div>

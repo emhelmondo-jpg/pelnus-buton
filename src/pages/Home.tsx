@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { ArrowRight, BookOpen, Users, Trophy, GraduationCap, Calendar, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+  const { t } = useTranslation();
   const [news, setNews] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -41,17 +43,17 @@ export default function Home() {
             className="max-w-4xl mx-auto"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Membangun Generasi <span className="text-amber-400">Unggul & Berkarakter</span>
+              {t('home.hero-title')} <span className="text-amber-400">{t('home.welcome')}</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
-              Institut Teknologi dan Pendidikan Pelita Nusantara Buton hadir untuk mencetak inovator masa depan dengan standar pendidikan berkualitas melalui Visi "Menjadi perguruan tinggi yang unggul dan berdaya saing global dalam inovasi pendidikan dan teknologi yang berbasis penelitian, teknologi digital dan kewirausahaan pada tahun 2040"
+              {t('home.hero-subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
               <Link to="/pendaftaran" className="bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold py-3 px-8 rounded-md transition-all transform hover:scale-105 flex items-center">
-                Daftar Sekarang <ArrowRight className="ml-2 w-5 h-5" />
+                {t('home.register-now')} <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link to="#" className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-md transition-all">
-                Jelajahi Program Studi
+                {t('home.explore-programs')}
               </Link>
             </div>
           </motion.div>
@@ -65,10 +67,10 @@ export default function Home() {
             <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-800 mb-6">
               <BookOpen className="w-7 h-7" />
             </div>
-            <h3 className="text-xl font-bold text-blue-950 mb-3">Program Studi Unggulan</h3>
-            <p className="text-gray-600 mb-4">Kurikulum adaptif yang disesuaikan dengan kebutuhan industri masa kini dan masa depan.</p>
+            <h3 className="text-xl font-bold text-blue-950 mb-3">{t('home.featured-programs')}</h3>
+            <p className="text-gray-600 mb-4">{t('home.featured-programs-desc')}</p>
             <Link to="#" className="text-amber-500 font-semibold flex items-center hover:text-amber-600">
-              Selengkapnya <ChevronRight className="w-4 h-4 ml-1" />
+              {t('home.learn-more')} <ChevronRight className="w-4 h-4 ml-1" />
             </Link>
           </div>
           
@@ -76,10 +78,10 @@ export default function Home() {
             <div className="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 mb-6">
               <Users className="w-7 h-7" />
             </div>
-            <h3 className="text-xl font-bold text-blue-950 mb-3">Dosen Profesional</h3>
-            <p className="text-gray-600 mb-4">Didukung oleh tenaga pendidik berpengalaman dan praktisi ahli di bidangnya.</p>
+            <h3 className="text-xl font-bold text-blue-950 mb-3">{t('home.professional-lecturers')}</h3>
+            <p className="text-gray-600 mb-4">{t('home.professional-lecturers-desc')}</p>
             <Link to="#" className="text-amber-500 font-semibold flex items-center hover:text-amber-600">
-              Selengkapnya <ChevronRight className="w-4 h-4 ml-1" />
+              {t('home.learn-more')} <ChevronRight className="w-4 h-4 ml-1" />
             </Link>
           </div>
 
@@ -87,10 +89,10 @@ export default function Home() {
             <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-800 mb-6">
               <Trophy className="w-7 h-7" />
             </div>
-            <h3 className="text-xl font-bold text-blue-950 mb-3">Fasilitas Modern</h3>
-            <p className="text-gray-600 mb-4">Laboratorium, perpustakaan digital, dan ruang kelas yang nyaman untuk mendukung pembelajaran.</p>
+            <h3 className="text-xl font-bold text-blue-950 mb-3">{t('home.modern-facilities')}</h3>
+            <p className="text-gray-600 mb-4">{t('home.modern-facilities-desc')}</p>
             <Link to="#" className="text-amber-500 font-semibold flex items-center hover:text-amber-600">
-              Selengkapnya <ChevronRight className="w-4 h-4 ml-1" />
+              {t('home.learn-more')} <ChevronRight className="w-4 h-4 ml-1" />
             </Link>
           </div>
         </div>
@@ -114,18 +116,18 @@ export default function Home() {
             <div className="w-full lg:w-1/2">
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-12 h-1 bg-amber-500"></div>
-                <h4 className="text-amber-500 font-bold uppercase tracking-wider">Sambutan Rektor</h4>
+                <h4 className="text-amber-500 font-bold uppercase tracking-wider">{t('home.rector-welcome')}</h4>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-blue-950 mb-6">Selamat Datang di ITPPN Buton</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-blue-950 mb-6">{t('home.rector-title')}</h2>
               <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-                "Pendidikan adalah senjata paling ampuh yang bisa Anda gunakan untuk mengubah dunia. Di Institut Teknologi dan Pendidikan Pelita Nusantara Buton, kami berkomitmen untuk tidak hanya mentransfer ilmu pengetahuan, tetapi juga membentuk karakter, menanamkan nilai-nilai integritas, dan mendorong inovasi."
+                {t('home.rector-quote')}
               </p>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Kami mengundang putra-putri terbaik bangsa untuk bergabung bersama kami, mengembangkan potensi diri, dan bersiap menjadi pemimpin masa depan yang membawa perubahan positif bagi masyarakat, bangsa, dan negara.
+                {t('home.rector-message')}
               </p>
               <div>
-                <h5 className="text-xl font-bold text-blue-950">Armin, S.E., M.Si.</h5>
-                <p className="text-gray-500">Rektor ITPPN Buton</p>
+                <h5 className="text-xl font-bold text-blue-950">{t('home.rector-name')}</h5>
+                <p className="text-gray-500">{t('home.rector-position')}</p>
               </div>
             </div>
           </div>
@@ -139,12 +141,12 @@ export default function Home() {
           <div className="text-center mb-12">
             <div className="flex items-center justify-center space-x-2 mb-4">
               <div className="w-12 h-1 bg-amber-500"></div>
-              <h4 className="text-amber-500 font-bold uppercase tracking-wider">Profil Kampus</h4>
+              <h4 className="text-amber-500 font-bold uppercase tracking-wider">{t('home.campus-profile')}</h4>
               <div className="w-12 h-1 bg-amber-500"></div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Mengenal Lebih Dekat ITPPN Buton</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('home.campus-profile-title')}</h2>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              Saksikan video profil kami untuk melihat fasilitas, kegiatan akademik, dan lingkungan kampus yang mendukung proses belajar mengajar.
+              {t('home.campus-profile-desc')}
             </p>
           </div>
           
