@@ -98,6 +98,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Promotional Video */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-950 mb-4">{t('home.promo-video-title')}</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">{t('home.promo-video-subtitle')}</p>
+          </div>
+          
+          <div className="max-w-5xl mx-auto bg-black rounded-2xl shadow-2xl overflow-hidden border-4 border-blue-900 hover:shadow-3xl transition-shadow">
+            <div className="relative flex justify-center bg-black">
+              <video 
+                className="w-full h-auto max-h-[70vh] object-contain"
+                controls
+                playsInline
+                preload="metadata"
+                poster="/backprof.png"
+              >
+                <source src="/vdpromosi.mp4" type="video/mp4" />
+                {t('home.video-fallback')}
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Sambutan Rektor */}
       <section className="py-20 bg-gray-50 mt-10">
         <div className="container mx-auto px-4">

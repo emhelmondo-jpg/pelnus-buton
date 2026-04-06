@@ -83,6 +83,10 @@ const resources = {
       "home.pmb-apply": "Apply Online",
       "home.pmb-info": "Admission Info",
       "home.video-fallback": "Your browser does not support HTML5 video.",
+      
+      // Promotional video
+      "home.promo-video-title": "Discover ITPPN Buton",
+      "home.promo-video-subtitle": "Watch our institution's story and join a community of innovators and leaders",
 
       // Profile pages
       "visimisi.hero.title": "Vision & Mission",
@@ -270,6 +274,10 @@ const resources = {
       "home.pmb-apply": "Daftar Online",
       "home.pmb-info": "Informasi Pendaftaran",
       "home.video-fallback": "Browser Anda tidak mendukung pemutaran video HTML5.",
+      
+      // Promotional video
+      "home.promo-video-title": "Temukan ITPPN Buton",
+      "home.promo-video-subtitle": "Tonton kisah institusi kami dan bergabunglah dengan komunitas inovator dan pemimpin",
 
       // Profile pages
       "visimisi.hero.title": "Visi & Misi",
