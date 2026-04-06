@@ -91,13 +91,13 @@ export default function Navbar() {
                   onClick={() => i18n.changeLanguage('id')}
                   className="px-4 py-3 hover:bg-blue-50 hover:text-blue-800 transition-colors border-b border-gray-100 text-left"
                 >
-                  Bahasa Indonesia
+                  {t('lang.indonesian')}
                 </button>
                 <button 
                   onClick={() => i18n.changeLanguage('en')}
                   className="px-4 py-3 hover:bg-blue-50 hover:text-blue-800 transition-colors text-left"
                 >
-                  English
+                  {t('lang.english')}
                 </button>
               </div>
             </div>

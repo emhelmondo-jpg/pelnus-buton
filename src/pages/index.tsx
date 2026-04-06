@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[560px] md:min-h-[700px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center z-0"
@@ -42,17 +42,17 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight">
               {t('home.hero-title')} <span className="text-amber-400">{t('home.welcome')}</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
               {t('home.hero-subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <Link href="/pendaftaran" className="bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold py-3 px-8 rounded-md transition-all transform hover:scale-105 flex items-center">
+              <Link href="/pendaftaran" className="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold py-3 px-8 rounded-md transition-all transform hover:scale-105 flex items-center justify-center">
                 {t('home.register-now')} <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
-              <Link href="#" className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-md transition-all">
+              <Link href="#" className="w-full sm:w-auto bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-md transition-all text-center">
                 {t('home.explore-programs')}
               </Link>
             </div>
@@ -150,15 +150,17 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="max-w-md mx-auto bg-black rounded-xl shadow-2xl overflow-hidden border-4 border-blue-900">
+          <div className="max-w-5xl mx-auto bg-black rounded-xl shadow-2xl overflow-hidden border-4 border-blue-900">
             <div className="relative flex justify-center">
               <video 
                 className="w-full h-auto max-h-[80vh] object-contain"
                 controls
-                poster="https://picsum.photos/seed/campus-video/720/1280"
+                playsInline
+                preload="metadata"
+                poster="/backprof.png"
+                src="/video-profil.mp4"
               >
-                <source src="/video-profil.mp4" type="video/mp4" />
-                Browser Anda tidak mendukung tag video.
+                {t('home.video-fallback')}
               </video>
             </div>
           </div>
@@ -172,12 +174,12 @@ export default function Home() {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-12 h-1 bg-amber-500"></div>
-                <h4 className="text-amber-500 font-bold uppercase tracking-wider">Informasi Kampus</h4>
+                <h4 className="text-amber-500 font-bold uppercase tracking-wider">{t('home.information-title')}</h4>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-blue-950">Berita & Pengumuman Terbaru</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-blue-950">{t('home.news-section-title')}</h2>
             </div>
             <Link href="#" className="hidden md:flex items-center text-blue-800 font-semibold hover:text-amber-500 transition-colors">
-              Lihat Semua Berita <ArrowRight className="ml-2 w-5 h-5" />
+              {t('home.view-all-news')} <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
           </div>
 
@@ -197,7 +199,7 @@ export default function Home() {
                       referrerPolicy="no-referrer"
                     />
                     <div className="absolute top-4 left-4 bg-amber-500 text-blue-950 text-xs font-bold px-3 py-1 rounded">
-                      Berita
+                      {t('home.news-label')}
                     </div>
                   </div>
                   <div className="p-6">
@@ -212,7 +214,7 @@ export default function Home() {
                       {item.excerpt}
                     </p>
                     <Link href="#" className="text-blue-800 font-semibold flex items-center hover:text-amber-500 transition-colors">
-                      Baca Selengkapnya <ChevronRight className="w-4 h-4 ml-1" />
+                      {t('home.read-more')} <ChevronRight className="w-4 h-4 ml-1" />
                     </Link>
                   </div>
                 </div>
@@ -222,7 +224,7 @@ export default function Home() {
           
           <div className="mt-8 text-center md:hidden">
             <Link href="#" className="inline-flex items-center text-blue-800 font-semibold hover:text-amber-500 transition-colors">
-              Lihat Semua Berita <ArrowRight className="ml-2 w-5 h-5" />
+              {t('home.view-all-news')} <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
           </div>
         </div>
@@ -235,16 +237,16 @@ export default function Home() {
         
         <div className="container mx-auto px-4 relative z-10 text-center">
           <GraduationCap className="w-16 h-16 text-amber-400 mx-auto mb-6" />
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Penerimaan Mahasiswa Baru</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">{t('home.pmb-title')}</h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-            Wujudkan mimpimu bersama ITPPN Buton. Pendaftaran gelombang pertama telah dibuka.
+            {t('home.pmb-subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/pendaftaran" className="bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold py-3 px-8 rounded-md transition-all text-lg">
-              Daftar Online
+            <Link href="/pendaftaran" className="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold py-3 px-8 rounded-md transition-all text-lg text-center">
+              {t('home.pmb-apply')}
             </Link>
-            <Link href="/pendaftaran" className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-md transition-all text-lg">
-              Informasi Pendaftaran
+            <Link href="/pendaftaran" className="w-full sm:w-auto bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-md transition-all text-lg text-center">
+              {t('home.pmb-info')}
             </Link>
           </div>
         </div>
